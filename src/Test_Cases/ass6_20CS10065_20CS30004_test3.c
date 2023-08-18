@@ -1,0 +1,32 @@
+// Bubble sort
+
+int printStr(char * dummy);
+int printInt(int dummy);
+int readInt(int * dummy);
+int n = 10;
+
+int main(){
+  int A[10];
+  int i = 0, j, k;
+  printStr("Enter 10 integers (one in each line):\n");
+  for(i = 0; i < n; ++i){
+    A[i] = readInt(&k);
+  }
+  for(i = 0; i < n; ++i){
+    for(j = i + 1; j < n; ++j){
+      if(A[i] > A[j]){
+        k = A[i];
+        A[i] = A[j];
+        A[j] = k;
+      }
+    }
+  }
+  printStr("They form the sorted sequence: ");
+  for(i = 0; i < n; ++i){
+    printInt(A[i]);
+    if(i < n - 1)
+      printStr(", ");
+  }
+  printStr("\n");
+  return 0;
+}
